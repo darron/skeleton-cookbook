@@ -3,7 +3,7 @@
 # Cookbook Name:: skeleton
 # Recipe:: default
 #
-# Copyright (C) YEAR YOUR_NAME <YOUR_EMAIL>
+# Copyright (C) 2013, Darron Froese <darron@froese.org>
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.

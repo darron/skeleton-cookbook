@@ -1,10 +1,6 @@
 Skeleton Cookbook
 =================
 
-This is a testable skeleton cookbook designed for you or your organization to
-fork and modify appropriately. The cookbook comes with everything you need to
-develop infrastructure code with Chef and feel confident about it.
-
 Requirements
 ------------
 
@@ -31,13 +27,12 @@ Recipes
 Testing
 -------
 
-[![Build Status](https://travis-ci.org/mlafeldt/skeleton-cookbook.png?branch=master)](https://travis-ci.org/mlafeldt/skeleton-cookbook)
+[![Build Status](https://travis-ci.org/darron/skeleton-cookbook.png?branch=master)](https://travis-ci.org/darron/skeleton-cookbook)
 
 The cookbook provides the following Rake tasks for testing:
 
     rake integration                  # Alias for kitchen:all
     rake kitchen:all                  # Run all test instances
-    rake kitchen:default-centos-64    # Run default-centos-64 test instance
     rake kitchen:default-ubuntu-1204  # Run default-ubuntu-1204 test instance
     rake lint                         # Lint Chef cookbooks
     rake rubocop                      # Run rubocop tests
@@ -49,9 +44,9 @@ The cookbook provides the following Rake tasks for testing:
 License and Author
 ------------------
 
-Author:: YOUR_NAME (YOUR_EMAIL)
+Author:: Darron Froese (darron@froese.org)
 
-Copyright:: YEAR, YOUR_NAME
+Copyright:: 2013, Darron Froese
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.

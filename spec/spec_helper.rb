@@ -4,7 +4,7 @@ require 'chefspec/berkshelf'
 
 RSpec.configure do |config|
   # Specify the path for Chef Solo to find cookbooks
-  # config.cookbook_path = '/var/cookbooks'
+  config.cookbook_path = '../'
 
   # Specify the path for Chef Solo to find roles
   # config.role_path = '/var/roles'
@@ -16,13 +16,13 @@ RSpec.configure do |config|
   # config.path = 'ohai.json'
 
   # Specify the operating platform to mock Ohai data from
-  # config.platform = 'ubuntu'
+  config.platform = 'ubuntu'
 
   # Specify the operating version to mock Ohai data from
-  # config.version = '12.04'
+  config.version = '12.04'
 
   # Use color output for RSpec
-  # config.color_enabled = true
+  config.color_enabled = true
 
   # Use documentation output formatter
   # config.formatter = :documentation

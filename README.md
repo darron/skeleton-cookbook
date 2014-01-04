@@ -1,4 +1,4 @@
-Skeleton Cookbook
+skeleton Cookbook
 =================
 
 Requirements
@@ -46,7 +46,7 @@ License and Author
 
 Author:: Darron Froese (darron@froese.org)
 
-Copyright:: 2013, Darron Froese
+Copyright:: 2014, Darron Froese
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.

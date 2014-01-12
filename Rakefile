@@ -29,9 +29,17 @@ task :rubocop do
   sh 'bundle exec rubocop'
 end
 
+desc "Cleanup Vendor cookbooks"
+task :cleanup do
+  sh 'rm -rf vendor/cookbooks/*'
+end
+
+desc "Syntax check and build AMI"
+task :build => [:cleanup, :lint, :spec, :tailor, :taste, :rubocop, :packer]
+
 desc "Build AMI using Packer"
-task :build do
-  sh 'rm -rf vendor/cookbooks; berks install --path vendor/cookbooks; packer build template.json'
+task :packer do
+  sh 'berks install --path vendor/cookbooks; packer build template.json'
 end
 
 begin

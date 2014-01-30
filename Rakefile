@@ -7,11 +7,16 @@ FoodCritic::Rake::LintTask.new(:lint) do |t|
   t.options = { :fail_tags => ["any"] }
 end
 
+desc "Run extra Foodcritic rulesets"
+task :food_extra do
+  sh 'bundle exec foodcritic -f any -I foodcritic/* .'
+end
+
 desc "Run ChefSpec examples"
 RSpec::Core::RakeTask.new(:spec)
 
 desc "Run all tests"
-task :test => [:cleanup_vendor, :lint, :spec, :tailor, :taste, :rubocop]
+task :test => [:cleanup_vendor, :lint, :food_extra, :spec, :tailor, :taste, :rubocop]
 task :default => :test
 
 desc "Run tailor tests"

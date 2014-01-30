@@ -9,7 +9,7 @@ end
 
 desc "Run extra Foodcritic rulesets"
 task :food_extra do
-  sh 'bundle exec foodcritic -f any -I foodcritic/* .'
+  sh 'if [ "$(ls -A foodcritic/)" ]; then bundle exec foodcritic -f any -I foodcritic/* .; fi'
 end
 
 desc "Run ChefSpec examples"

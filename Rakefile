@@ -63,6 +63,15 @@ task :packer_build_ami do
   sh 'berks install --path vendor/cookbooks; packer build -only=amazon-ebs template.json'
 end
 
+desc "Syntax check and build Droplet"
+task :build_droplet => [:cleanup_vendor, :lint, :spec, :tailor, :taste, :rubocop, :packer_droplet]
+
+task :packer_droplet => [:cleanup_vendor, :packer_build_droplet]
+
+task :packer_build_droplet do
+  sh 'berks install --path vendor/cookbooks; packer build -only=digitalocean template.json'
+end
+
 begin
   require "kitchen/rake_tasks"
   Kitchen::RakeTasks.new

@@ -19,7 +19,5 @@
       "type": "chef-solo",
       "cookbook_paths": ["./vendor/cookbooks"],
       "run_list": [ "skeleton" ]
-    }],
-
-    "post-processors": ["vagrant"]
+    }]
 }

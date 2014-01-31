@@ -55,13 +55,13 @@ desc "Build Vagrant box"
 task :vagrant => [:cleanup_vendor, :cleanup_vagrant, :berksintall, :vagrantup]
 
 desc "Syntax check and build AMI"
-task :build => [:cleanup_vendor, :lint, :spec, :tailor, :taste, :rubocop, :packer]
+task :build_ami => [:cleanup_vendor, :lint, :spec, :tailor, :taste, :rubocop, :packer_ami]
 
 desc "Build AMI using Packer"
-task :packer => [:cleanup_vendor, :packer_build]
+task :packer_ami => [:cleanup_vendor, :packer_build_ami]
 
-task :packer_build do
-  sh 'berks install --path vendor/cookbooks; packer build template.json'
+task :packer_build_ami do
+  sh 'berks install --path vendor/cookbooks; packer build -only=amazon-ebs template.json'
 end
 
 begin

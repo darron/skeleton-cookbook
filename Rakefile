@@ -72,6 +72,15 @@ task :packer_build_droplet do
   sh 'berks install --path vendor/cookbooks; packer build -only=digitalocean template.json'
 end
 
+desc "Syntax check and build Openstack Image"
+task :build_openstack => [:cleanup_vendor, :lint, :spec, :tailor, :taste, :rubocop, :packer_openstack]
+
+task :packer_openstack => [:cleanup_vendor, :packer_build_openstack]
+
+task :packer_build_openstack do
+  sh 'berks install --path vendor/cookbooks; packer build -only=openstack template.json'
+end
+
 begin
   require "kitchen/rake_tasks"
   Kitchen::RakeTasks.new

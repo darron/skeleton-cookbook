@@ -57,7 +57,6 @@ task :vagrant => [:cleanup_vendor, :cleanup_vagrant, :berksintall, :vagrantup]
 desc "Syntax check and build AMI"
 task :build_ami => [:cleanup_vendor, :lint, :spec, :tailor, :taste, :rubocop, :packer_ami]
 
-desc "Build AMI using Packer"
 task :packer_ami => [:cleanup_vendor, :packer_build_ami]
 
 task :packer_build_ami do

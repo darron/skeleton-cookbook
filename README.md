@@ -31,9 +31,18 @@ Testing
 
 The cookbook provides the following Rake tasks for testing:
 
+    rake build                        # Syntax check and build all Packer targets
+    rake build_ami                    # Syntax check and build AMI
+    rake build_droplet                # Syntax check and build Droplet
+    rake build_openstack              # Syntax check and build Openstack Image
+    rake build_vagrant                # Syntax check and build Vagrant box
+    rake cleanup_vendor               # Cleanup Vendor directory
+    rake food_extra                   # Run extra Foodcritic rulesets
     rake integration                  # Alias for kitchen:all
     rake kitchen:all                  # Run all test instances
     rake kitchen:default-ubuntu-1204  # Run default-ubuntu-1204 test instance
+    rake kitchen:default-ubuntu-1304  # Run default-ubuntu-1304 test instance
+    rake kitchen:default-ubuntu-1310  # Run default-ubuntu-1310 test instance
     rake lint                         # Lint Chef cookbooks
     rake rubocop                      # Run rubocop tests
     rake spec                         # Run ChefSpec examples

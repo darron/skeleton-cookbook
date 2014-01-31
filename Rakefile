@@ -43,8 +43,9 @@ task :berksintall do
   sh 'berks install --path vendor/cookbooks'
 end
 
-desc "Build Vagrant box"
-task :vagrant => [:cleanup_vendor, :cleanup_vagrant, :berksintall, :vagrantup]
+desc "Syntax check and build Vagrant box"
+task :build_vagrant => [:cleanup_vendor, :cleanup_vagrant, :lint, :spec, :tailor, :taste, :rubocop, :berksintall, :vagrantup]
+task :vagrant => :build_vagrant
 
 task :vagrantup do
   sh 'vagrant up --provision'
@@ -52,6 +53,15 @@ end
 
 task :cleanup_vagrant do
   sh 'vagrant destroy -f'
+end
+
+desc "Syntax check and build all Packer targets"
+task :build => [:cleanup_vendor, :lint, :spec, :tailor, :taste, :rubocop, :packer]
+
+task :packer => [:cleanup_vendor, :packer_build]
+
+task :packer_build do
+  sh 'berks install --path vendor/cookbooks; packer build template.json'
 end
 
 desc "Syntax check and build AMI"

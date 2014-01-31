@@ -13,6 +13,12 @@
             "instance_type": "c1.medium",
             "ssh_username": "ubuntu",
             "ami_name": "skeleton {{timestamp}}"
+            },
+            {
+              "type": "digitalocean",
+              "image_id": "1505447",
+              "size_id": "63",
+              "snapshot_name": "skeleton {{timestamp}}"
             }],
 
     "provisioners": [{

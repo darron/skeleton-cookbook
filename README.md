@@ -41,6 +41,8 @@ In order to build an Amazon AMI, DigitalOcean Droplet or Rackspace OpenStack ima
     export DIGITALOCEAN_CLIENT_ID="long-random-string"
     export DIGITALOCEAN_API_KEY="another-long-random-string"
 
+Building images with Google Compute requires more setup than just a few ENV vars. Once you setup your GCE account and enable billing, take a look [here](http://www.packer.io/docs/builders/googlecompute.html) and [here](https://github.com/mitchellh/packer/issues/809) for additional Packer specific information.
+
 Testing
 -------
 
@@ -51,9 +53,11 @@ The cookbook provides the following Rake tasks:
     rake build                        # Syntax check and build all Packer targets
     rake build_ami                    # Syntax check and build AMI
     rake build_droplet                # Syntax check and build Droplet
+    rake build_gce                    # Syntax check and build Google Compute Image
     rake build_openstack              # Syntax check and build Openstack Image
     rake build_vagrant                # Syntax check and build Vagrant box
     rake cleanup_vendor               # Cleanup Vendor directory
+    rake convert_gce                  # Convert GCE key to pem format
     rake food_extra                   # Run extra Foodcritic rulesets
     rake integration                  # Alias for kitchen:all
     rake kitchen:all                  # Run all test instances

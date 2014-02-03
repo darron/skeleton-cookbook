@@ -37,7 +37,6 @@
               "bucket_name": "skeleton-packer-images",
               "client_secrets_file": "google.json",
               "private_key_file": "google.pem",
-              "passphrase": "",
               "source_image": "debian-7-wheezy-v20131120",
               "zone": "us-central1-a",
               "image_name": "skeleton-{{timestamp}}"

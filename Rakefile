@@ -100,6 +100,11 @@ task :packer_build_gce do
   sh 'berks install --path vendor/cookbooks; packer build -only=googlecompute template.json'
 end
 
+desc "Convert GCE key to pem format."
+task :convert_gce do
+  sh 'openssl pkcs12 -in google.p12 -nocerts -passin pass:notasecret -nodes -out google.pem'
+end
+
 begin
   require "kitchen/rake_tasks"
   Kitchen::RakeTasks.new

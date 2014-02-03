@@ -26,7 +26,7 @@ Recipes
 
 ### Packer Build
 
-In order to build an Amazon AMI, DigitalOcean Droplet or Rackspace OpenStack image, you will need accounts for each. Export these values to get Packer to honor them automatically:
+In order to build an Amazon AMI, DigitalOcean Droplet, Google Compute or Rackspace OpenStack image, you will need accounts for each. Export these values to get Packer to honor them automatically:
 
     # Rackspace
     export SDK_USERNAME="username"  # Same as here: https://mycloud.rackspace.com/

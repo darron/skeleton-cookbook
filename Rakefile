@@ -91,6 +91,15 @@ task :packer_build_openstack do
   sh 'berks install --path vendor/cookbooks; packer build -only=openstack template.json'
 end
 
+desc "Syntax check and build Google Compute Image"
+task :build_gce => [:cleanup_vendor, :lint, :spec, :tailor, :taste, :rubocop, :packer_gce]
+
+task :packer_gce => [:cleanup_vendor, :packer_build_gce]
+
+task :packer_build_gce do
+  sh 'berks install --path vendor/cookbooks; packer build -only=googlecompute template.json'
+end
+
 begin
   require "kitchen/rake_tasks"
   Kitchen::RakeTasks.new

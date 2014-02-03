@@ -19,3 +19,8 @@
 
 # Chefspec
 /.coverage/
+
+# Google
+google.json
+google.pem
+google.p12

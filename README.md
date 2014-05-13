@@ -32,11 +32,11 @@ In order to build an Amazon AMI, DigitalOcean Droplet, Google Compute or Rackspa
     export SDK_USERNAME="username"  # Same as here: https://mycloud.rackspace.com/
     export SDK_PASSWORD="password-to-login" # Not the API key.
     export SDK_PROVIDER="rackspace-us" # Or rackspace-uk
-    
+
     # EC2 - can be found here: https://portal.aws.amazon.com/gp/aws/securityCredentials?
     export AWS_ACCESS_KEY="long-random-string"
     export AWS_SECRET_KEY="another-even-longer-long-random-string"
-    
+
     # Digital Ocean - get these here: https://cloud.digitalocean.com/api_access
     export DIGITALOCEAN_CLIENT_ID="long-random-string"
     export DIGITALOCEAN_API_KEY="another-long-random-string"
@@ -62,8 +62,8 @@ The cookbook provides the following Rake tasks:
     rake integration                  # Alias for kitchen:all
     rake kitchen:all                  # Run all test instances
     rake kitchen:default-ubuntu-1204  # Run default-ubuntu-1204 test instance
-    rake kitchen:default-ubuntu-1304  # Run default-ubuntu-1304 test instance
-    rake kitchen:default-ubuntu-1310  # Run default-ubuntu-1310 test instance
+    rake kitchen:default-ubuntu-1404  # Run default-ubuntu-1404 test instance
+    rake knife_solo                   # Usage: rake knife_solo user={user} ip={ip.address.goes.here}
     rake lint                         # Lint Chef cookbooks
     rake rubocop                      # Run rubocop tests
     rake spec                         # Run ChefSpec examples

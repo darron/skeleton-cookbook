@@ -106,11 +106,11 @@ task :convert_gce do
   sh 'openssl pkcs12 -in google.p12 -nocerts -passin pass:notasecret -nodes -out google.pem'
 end
 
-desc 'Usage: rake knife_solo user={user} ip={ip.address.goes.here}'
+desc "Usage: rake knife_solo user={user} ip={ip.address.goes.here}"
 task :knife_solo do
   sh 'rm -rf cookbooks && rm -rf nodes'
   sh 'mkdir cookbooks && berks install --path cookbooks'
-  sh "mkdir nodes && echo '{\'run_list\':[\'skeleton::default\']}' > nodes/#{ENV['ip']}.json"
+  sh "mkdir nodes && echo '{\"run_list\":[\"skeleton::default\"]}' > nodes/#{ENV['ip']}.json"
   sh "bundle exec knife solo bootstrap #{ENV['user']}@#{ENV['ip']}"
 end
 
